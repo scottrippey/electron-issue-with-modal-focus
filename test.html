@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.addEventListener('focus', () => document.body.classList.remove('window-inactive'));
+      window.addEventListener('blur', () => document.body.classList.add('window-inactive'));
+    </script>
+    <style>
+      body { background: lightskyblue; }
+      body.window-inactive { background: lightgray; }
+      .window-inactive .if-active, .if-inactive { display: none; }
+      .window-inactive .if-inactive { display: inherit; }
+    </style>
+  </head>
+  <body>
+    <label>
+      <input autofocus />
+      <br />
+      <span class="if-active">Window has focus</span>
+      <span class="if-inactive">Window does not have focus</span>
+    </label>
+  </body>
+</html>
